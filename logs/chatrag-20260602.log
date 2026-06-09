@@ -1,0 +1,309 @@
+2026-06-02 22:21:13.154 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-02 22:21:13.824 [INF] Now listening on: http://localhost:5120
+2026-06-02 22:21:13.828 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-02 22:21:13.830 [INF] Hosting environment: Development
+2026-06-02 22:21:13.831 [INF] Content root path: C:\Users\Andy\Desktop\ChatRAG\ChatRag
+2026-06-02 22:21:20.686 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ - null null
+2026-06-02 22:21:20.696 [WRN] Failed to determine the https port for redirect.
+2026-06-02 22:21:20.708 [INF] Executing endpoint '/_Host'
+2026-06-02 22:21:20.723 [INF] Route matched with {page = "/_Host"}. Executing page /_Host
+2026-06-02 22:21:20.733 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-02 22:21:20.736 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-02 22:21:20.862 [INF] Executed page /_Host in 135.59ms
+2026-06-02 22:21:20.871 [INF] Executed endpoint '/_Host'
+2026-06-02 22:21:20.875 [INF] Request finished HTTP/1.1 GET http://localhost:5120/ - 200 null text/html; charset=utf-8 190.7631ms
+2026-06-02 22:21:20.881 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ChatRAG.styles.css - null null
+2026-06-02 22:21:20.881 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/site.css - null null
+2026-06-02 22:21:20.881 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - null null
+2026-06-02 22:21:20.881 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/bootstrap/bootstrap.min.css - null null
+2026-06-02 22:21:20.889 [INF] The file /ChatRAG.styles.css was not modified
+2026-06-02 22:21:20.889 [INF] The file /css/site.css was not modified
+2026-06-02 22:21:20.891 [INF] Executing endpoint 'Blazor static files'
+2026-06-02 22:21:20.892 [INF] The file /css/bootstrap/bootstrap.min.css was not modified
+2026-06-02 22:21:20.894 [INF] Request finished HTTP/1.1 GET http://localhost:5120/ChatRAG.styles.css - 304 null text/css 13.1258ms
+2026-06-02 22:21:20.894 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/site.css - 304 null text/css 13.655ms
+2026-06-02 22:21:20.896 [INF] The file /_framework/blazor.server.js was not modified
+2026-06-02 22:21:20.896 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/bootstrap/bootstrap.min.css - 304 null text/css 15.0675ms
+2026-06-02 22:21:20.905 [INF] Executed endpoint 'Blazor static files'
+2026-06-02 22:21:20.908 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - 304 null text/javascript 27.9118ms
+2026-06-02 22:21:21.043 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/css/open-iconic-bootstrap.min.css - null null
+2026-06-02 22:21:21.047 [INF] The file /css/open-iconic/font/css/open-iconic-bootstrap.min.css was not modified
+2026-06-02 22:21:21.048 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/css/open-iconic-bootstrap.min.css - 304 null text/css 5.4034ms
+2026-06-02 22:21:21.092 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/fonts/open-iconic.woff - null null
+2026-06-02 22:21:21.095 [INF] The file /css/open-iconic/font/fonts/open-iconic.woff was not modified
+2026-06-02 22:21:21.096 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/fonts/open-iconic.woff - 304 null application/font-woff 4.3273ms
+2026-06-02 22:21:21.103 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor/initializers - null null
+2026-06-02 22:21:21.108 [INF] Executing endpoint 'Blazor initializers'
+2026-06-02 22:21:21.116 [INF] Executed endpoint 'Blazor initializers'
+2026-06-02 22:21:21.118 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor/initializers - 200 null application/json; charset=utf-8 15.1909ms
+2026-06-02 22:21:21.126 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:21:21.130 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:21:21.136 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:21:21.138 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 11.7728ms
+2026-06-02 22:21:21.142 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=3wKinUhbQMurM7t9WaQ3_Q - null null
+2026-06-02 22:21:21.145 [INF] Executing endpoint '/_blazor'
+2026-06-02 22:21:23.158 [INF] Executed endpoint '/_blazor'
+2026-06-02 22:21:23.161 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=3wKinUhbQMurM7t9WaQ3_Q - 101 null null 2018.3903ms
+2026-06-02 22:21:31.479 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:21:31.483 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:21:31.485 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:21:31.486 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 7.2756ms
+2026-06-02 22:21:31.504 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=RvO-LV9_NNQN2k-7x93qzg - null null
+2026-06-02 22:21:31.507 [INF] Executing endpoint '/_blazor'
+2026-06-02 22:21:31.551 [INF] Request starting HTTP/1.1 GET http://localhost:5120/chat - null null
+2026-06-02 22:21:31.553 [INF] Executing endpoint '/_Host'
+2026-06-02 22:21:31.555 [INF] Route matched with {page = "/_Host"}. Executing page /_Host
+2026-06-02 22:21:31.557 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-02 22:21:31.560 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-02 22:21:31.881 [INF] Executed page /_Host in 325.0495ms
+2026-06-02 22:21:31.884 [INF] Executed endpoint '/_Host'
+2026-06-02 22:21:31.887 [INF] Request finished HTTP/1.1 GET http://localhost:5120/chat - 200 null text/html; charset=utf-8 335.9083ms
+2026-06-02 22:21:31.895 [INF] Executed endpoint '/_blazor'
+2026-06-02 22:21:31.897 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=RvO-LV9_NNQN2k-7x93qzg - 101 null null 393.1321ms
+2026-06-02 22:21:31.961 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundarysyLa5lZzdyKevvsY 359
+2026-06-02 22:21:31.963 [INF] Executing endpoint 'Blazor disconnect'
+2026-06-02 22:21:31.971 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/site.css - null null
+2026-06-02 22:21:31.972 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/bootstrap/bootstrap.min.css - null null
+2026-06-02 22:21:31.973 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ChatRAG.styles.css - null null
+2026-06-02 22:21:31.973 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - null null
+2026-06-02 22:21:31.975 [INF] The file /css/site.css was not modified
+2026-06-02 22:21:31.977 [INF] The file /css/bootstrap/bootstrap.min.css was not modified
+2026-06-02 22:21:31.980 [INF] The file /ChatRAG.styles.css was not modified
+2026-06-02 22:21:31.983 [INF] Executing endpoint 'Blazor static files'
+2026-06-02 22:21:31.984 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/site.css - 304 null text/css 12.8581ms
+2026-06-02 22:21:31.984 [INF] Executed endpoint 'Blazor disconnect'
+2026-06-02 22:21:31.985 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/bootstrap/bootstrap.min.css - 304 null text/css 13.2434ms
+2026-06-02 22:21:31.986 [INF] Request finished HTTP/1.1 GET http://localhost:5120/ChatRAG.styles.css - 304 null text/css 12.9185ms
+2026-06-02 22:21:31.987 [INF] The file /_framework/blazor.server.js was not modified
+2026-06-02 22:21:31.990 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - 200 0 null 29.5375ms
+2026-06-02 22:21:31.995 [INF] Executed endpoint 'Blazor static files'
+2026-06-02 22:21:31.997 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - 304 null text/javascript 23.882ms
+2026-06-02 22:21:32.200 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/css/open-iconic-bootstrap.min.css - null null
+2026-06-02 22:21:32.204 [INF] The file /css/open-iconic/font/css/open-iconic-bootstrap.min.css was not modified
+2026-06-02 22:21:32.205 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/css/open-iconic-bootstrap.min.css - 304 null text/css 4.939ms
+2026-06-02 22:21:32.214 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor/initializers - null null
+2026-06-02 22:21:32.217 [INF] Executing endpoint 'Blazor initializers'
+2026-06-02 22:21:32.219 [INF] Executed endpoint 'Blazor initializers'
+2026-06-02 22:21:32.220 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor/initializers - 200 null application/json; charset=utf-8 6.1473ms
+2026-06-02 22:21:32.225 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/fonts/open-iconic.woff - null null
+2026-06-02 22:21:32.228 [INF] The file /css/open-iconic/font/fonts/open-iconic.woff was not modified
+2026-06-02 22:21:32.230 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/fonts/open-iconic.woff - 304 null application/font-woff 4.9862ms
+2026-06-02 22:21:32.235 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:21:32.239 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:21:32.241 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:21:32.243 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 7.0595ms
+2026-06-02 22:21:32.252 [INF] Request starting HTTP/1.1 GET http://localhost:5120/favicon.png - null null
+2026-06-02 22:21:32.256 [INF] The file /favicon.png was not modified
+2026-06-02 22:21:32.257 [INF] Request finished HTTP/1.1 GET http://localhost:5120/favicon.png - 304 null image/png 4.8012ms
+2026-06-02 22:21:32.259 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=CMXmoHzV80X3eaFaexWV5g - null null
+2026-06-02 22:21:32.263 [INF] Executing endpoint '/_blazor'
+2026-06-02 22:21:34.328 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ - null null
+2026-06-02 22:21:34.331 [INF] Executing endpoint '/_Host'
+2026-06-02 22:21:34.332 [INF] Route matched with {page = "/_Host"}. Executing page /_Host
+2026-06-02 22:21:34.334 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-02 22:21:34.336 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-02 22:21:34.341 [INF] Executed page /_Host in 7.3934ms
+2026-06-02 22:21:34.342 [INF] Executed endpoint '/_Host'
+2026-06-02 22:21:34.344 [INF] Request finished HTTP/1.1 GET http://localhost:5120/ - 200 null text/html; charset=utf-8 15.5893ms
+2026-06-02 22:21:34.348 [INF] Executed endpoint '/_blazor'
+2026-06-02 22:21:34.350 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=CMXmoHzV80X3eaFaexWV5g - 101 null null 2090.8615ms
+2026-06-02 22:21:34.373 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundarywVtIje2dPbA4Bh5b 359
+2026-06-02 22:21:34.376 [INF] Executing endpoint 'Blazor disconnect'
+2026-06-02 22:21:34.382 [INF] Executed endpoint 'Blazor disconnect'
+2026-06-02 22:21:34.384 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - 200 0 null 10.8298ms
+2026-06-02 22:21:34.402 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - null null
+2026-06-02 22:21:34.405 [INF] Executing endpoint 'Blazor static files'
+2026-06-02 22:21:34.407 [INF] The file /_framework/blazor.server.js was not modified
+2026-06-02 22:21:34.408 [INF] Executed endpoint 'Blazor static files'
+2026-06-02 22:21:34.409 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - 304 null text/javascript 7.1361ms
+2026-06-02 22:21:34.467 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor/initializers - null null
+2026-06-02 22:21:34.469 [INF] Executing endpoint 'Blazor initializers'
+2026-06-02 22:21:34.470 [INF] Executed endpoint 'Blazor initializers'
+2026-06-02 22:21:34.471 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor/initializers - 200 null application/json; charset=utf-8 4.1539ms
+2026-06-02 22:21:34.476 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:21:34.480 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:21:34.482 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:21:34.483 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 6.6918ms
+2026-06-02 22:21:34.490 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=x8sCGXYWD-qhA0LXG6DT1A - null null
+2026-06-02 22:21:34.492 [INF] Executing endpoint '/_blazor'
+2026-06-02 22:21:44.424 [INF] Dividido 'foundational-c-sharp-with-microsoft-certification-exam.txt' en 1 fragmentos.
+2026-06-02 22:21:44.430 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:21:44.433 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:21:48.969 [INF] Received HTTP response headers after 4533.7233ms - 200
+2026-06-02 22:21:48.971 [INF] End processing HTTP request after 4541.48ms - 200
+2026-06-02 22:21:49.229 [INF] Indexados 1 fragmentos de 'foundational-c-sharp-with-microsoft-certification-exam.txt' en Elasticsearch.
+2026-06-02 22:22:17.193 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:22:17.195 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:22:17.268 [INF] Received HTTP response headers after 71.9871ms - 200
+2026-06-02 22:22:17.270 [INF] End processing HTTP request after 77.1927ms - 200
+2026-06-02 22:23:28.996 [INF] Application is shutting down...
+2026-06-02 22:23:28.997 [INF] Connection id "0HNM11PLKALV0", Request id "0HNM11PLKALV0:00000001": the application aborted the connection.
+2026-06-02 22:23:29.003 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:23:29.006 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:23:29.008 [INF] Executed endpoint '/_blazor'
+2026-06-02 22:23:29.008 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:23:29.009 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=x8sCGXYWD-qhA0LXG6DT1A - 101 null null 114519.1517ms
+2026-06-02 22:23:29.011 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 8.05ms
+2026-06-02 22:27:49.075 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-02 22:27:49.218 [INF] Now listening on: http://localhost:5120
+2026-06-02 22:27:49.223 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-02 22:27:49.225 [INF] Hosting environment: Development
+2026-06-02 22:27:49.226 [INF] Content root path: C:\Users\Andy\Desktop\ChatRAG\ChatRag
+2026-06-02 22:27:49.387 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:27:49.400 [WRN] Failed to determine the https port for redirect.
+2026-06-02 22:27:49.412 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:27:49.425 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:27:49.428 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 41.8981ms
+2026-06-02 22:27:49.432 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=6qBIsvDG7DJ6fzFuGJPP3Q - null null
+2026-06-02 22:27:49.441 [INF] Executing endpoint '/_blazor'
+2026-06-02 22:27:49.487 [INF] Request starting HTTP/1.1 GET http://localhost:5120/chat - null null
+2026-06-02 22:27:49.490 [INF] Executing endpoint '/_Host'
+2026-06-02 22:27:49.499 [INF] Route matched with {page = "/_Host"}. Executing page /_Host
+2026-06-02 22:27:49.510 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-02 22:27:49.511 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-02 22:27:49.661 [INF] Executed page /_Host in 157.4572ms
+2026-06-02 22:27:49.663 [INF] Executed endpoint '/_Host'
+2026-06-02 22:27:49.667 [INF] Request finished HTTP/1.1 GET http://localhost:5120/chat - 200 null text/html; charset=utf-8 180.4466ms
+2026-06-02 22:27:49.681 [INF] Executed endpoint '/_blazor'
+2026-06-02 22:27:49.685 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=6qBIsvDG7DJ6fzFuGJPP3Q - 101 null null 253.4342ms
+2026-06-02 22:27:49.696 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundarywvmCN8ZXcdXyoSRB 359
+2026-06-02 22:27:49.725 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - null null
+2026-06-02 22:27:49.741 [INF] Executing endpoint 'Blazor disconnect'
+2026-06-02 22:27:49.743 [INF] Executing endpoint 'Blazor static files'
+2026-06-02 22:27:49.748 [INF] The file /_framework/blazor.server.js was not modified
+2026-06-02 22:27:49.753 [INF] Executed endpoint 'Blazor disconnect'
+2026-06-02 22:27:49.755 [INF] Executed endpoint 'Blazor static files'
+2026-06-02 22:27:49.756 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - 200 0 null 59.9372ms
+2026-06-02 22:27:49.759 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - 304 null text/javascript 34.2154ms
+2026-06-02 22:27:50.096 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor/initializers - null null
+2026-06-02 22:27:50.100 [INF] Executing endpoint 'Blazor initializers'
+2026-06-02 22:27:50.112 [INF] Executed endpoint 'Blazor initializers'
+2026-06-02 22:27:50.114 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor/initializers - 200 null application/json; charset=utf-8 17.7884ms
+2026-06-02 22:27:50.128 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:27:50.132 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:27:50.134 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:27:50.136 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 7.8223ms
+2026-06-02 22:27:50.141 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=KDN01u7rJoH9jSriZyKUcw - null null
+2026-06-02 22:27:50.144 [INF] Executing endpoint '/_blazor'
+2026-06-02 22:28:29.953 [INF] Dividido 'foundational-c-sharp-with-microsoft-certification-exam.txt' en 1 fragmentos.
+2026-06-02 22:28:29.958 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:28:29.961 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:28:32.874 [INF] Received HTTP response headers after 2910.3648ms - 200
+2026-06-02 22:28:32.875 [INF] End processing HTTP request after 2917.7341ms - 200
+2026-06-02 22:28:32.988 [INF] Indexados 1 fragmentos de 'foundational-c-sharp-with-microsoft-certification-exam.txt' en Elasticsearch.
+2026-06-02 22:28:44.457 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:28:44.459 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:28:45.706 [INF] Received HTTP response headers after 1246.209ms - 200
+2026-06-02 22:28:45.708 [INF] End processing HTTP request after 1250.733ms - 200
+2026-06-02 22:28:47.867 [ERR] Error en AskAsync para pregunta: hola
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at OllamaSharp.OllamaApiClient.EnsureSuccessStatusCodeAsync(HttpResponseMessage response)
+   at OllamaSharp.OllamaApiClient.SendToOllamaAsync(HttpRequestMessage requestMessage, OllamaRequest ollamaRequest, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at OllamaSharp.OllamaApiClient.ChatAsync(ChatRequest request, CancellationToken cancellationToken)+MoveNext()
+   at OllamaSharp.OllamaApiClient.ChatAsync(ChatRequest request, CancellationToken cancellationToken)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at OllamaSharp.IAsyncEnumerableExtensions.StreamToEndAsync[Tin,Tout](IAsyncEnumerable`1 stream, IAppender`2 appender, Action`1 itemCallback)
+   at OllamaSharp.IAsyncEnumerableExtensions.StreamToEndAsync[Tin,Tout](IAsyncEnumerable`1 stream, IAppender`2 appender, Action`1 itemCallback)
+   at OllamaSharp.OllamaApiClient.Microsoft.Extensions.AI.IChatClient.GetResponseAsync(IEnumerable`1 messages, ChatOptions options, CancellationToken cancellationToken)
+   at Microsoft.Extensions.AI.FunctionInvokingChatClient.GetResponseAsync(IEnumerable`1 messages, ChatOptions options, CancellationToken cancellationToken)
+   at Microsoft.SemanticKernel.ChatCompletion.ChatClientChatCompletionService.GetChatMessageContentsAsync(ChatHistory chatHistory, PromptExecutionSettings executionSettings, Kernel kernel, CancellationToken cancellationToken)
+   at Microsoft.SemanticKernel.ChatCompletion.ChatCompletionServiceExtensions.GetChatMessageContentAsync(IChatCompletionService chatCompletionService, ChatHistory chatHistory, PromptExecutionSettings executionSettings, Kernel kernel, CancellationToken cancellationToken)
+   at ChatRAG.Services.ChatService.AskAsync(String question) in C:\Users\Andy\Desktop\ChatRAG\ChatRag\Services\ChatService.cs:line 59
+2026-06-02 22:30:19.809 [INF] Application is shutting down...
+2026-06-02 22:30:19.810 [INF] Connection id "0HNM11T9FA9RD", Request id "0HNM11T9FA9RD:00000001": the application aborted the connection.
+2026-06-02 22:30:19.819 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:30:19.822 [INF] Executed endpoint '/_blazor'
+2026-06-02 22:30:19.822 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:30:19.824 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=KDN01u7rJoH9jSriZyKUcw - 101 null null 149682.6794ms
+2026-06-02 22:30:19.825 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:30:19.830 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 10.8508ms
+2026-06-02 22:40:54.942 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-02 22:40:55.061 [INF] Now listening on: http://localhost:5120
+2026-06-02 22:40:55.064 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-02 22:40:55.065 [INF] Hosting environment: Development
+2026-06-02 22:40:55.066 [INF] Content root path: C:\Users\Andy\Desktop\ChatRAG\ChatRag
+2026-06-02 22:40:58.935 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:40:58.949 [WRN] Failed to determine the https port for redirect.
+2026-06-02 22:40:58.966 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:40:58.981 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:40:58.984 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 50.2892ms
+2026-06-02 22:40:58.988 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=xqdDSIsQTViRwxJ2qrMyOQ - null null
+2026-06-02 22:40:58.997 [INF] Executing endpoint '/_blazor'
+2026-06-02 22:40:59.057 [INF] Request starting HTTP/1.1 GET http://localhost:5120/chat - null null
+2026-06-02 22:40:59.061 [INF] Executing endpoint '/_Host'
+2026-06-02 22:40:59.074 [INF] Route matched with {page = "/_Host"}. Executing page /_Host
+2026-06-02 22:40:59.085 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-02 22:40:59.087 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-02 22:40:59.275 [INF] Executed page /_Host in 197.3355ms
+2026-06-02 22:40:59.277 [INF] Executed endpoint '/_Host'
+2026-06-02 22:40:59.283 [INF] Request finished HTTP/1.1 GET http://localhost:5120/chat - 200 null text/html; charset=utf-8 225.6961ms
+2026-06-02 22:40:59.288 [INF] Executed endpoint '/_blazor'
+2026-06-02 22:40:59.290 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=xqdDSIsQTViRwxJ2qrMyOQ - 101 null null 303.1339ms
+2026-06-02 22:40:59.306 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryWYz772CuywSJirWa 359
+2026-06-02 22:40:59.311 [INF] Executing endpoint 'Blazor disconnect'
+2026-06-02 22:40:59.324 [INF] Executed endpoint 'Blazor disconnect'
+2026-06-02 22:40:59.326 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - 200 0 null 19.5914ms
+2026-06-02 22:40:59.344 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - null null
+2026-06-02 22:40:59.348 [INF] Executing endpoint 'Blazor static files'
+2026-06-02 22:40:59.354 [INF] The file /_framework/blazor.server.js was not modified
+2026-06-02 22:40:59.356 [INF] Executed endpoint 'Blazor static files'
+2026-06-02 22:40:59.358 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - 304 null text/javascript 14.0007ms
+2026-06-02 22:40:59.548 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor/initializers - null null
+2026-06-02 22:40:59.551 [INF] Executing endpoint 'Blazor initializers'
+2026-06-02 22:40:59.558 [INF] Executed endpoint 'Blazor initializers'
+2026-06-02 22:40:59.560 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor/initializers - 200 null application/json; charset=utf-8 11.3996ms
+2026-06-02 22:40:59.574 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:40:59.577 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:40:59.578 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:40:59.581 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 7.2216ms
+2026-06-02 22:40:59.586 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=nay2Ilm27r67OJptOwBNag - null null
+2026-06-02 22:40:59.589 [INF] Executing endpoint '/_blazor'
+2026-06-02 22:41:06.223 [INF] Dividido 'foundational-c-sharp-with-microsoft-certification-exam.txt' en 1 fragmentos.
+2026-06-02 22:41:06.229 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:41:06.232 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:41:09.353 [INF] Received HTTP response headers after 3117.9986ms - 200
+2026-06-02 22:41:09.355 [INF] End processing HTTP request after 3125.9428ms - 200
+2026-06-02 22:41:09.468 [INF] Indexados 1 fragmentos de 'foundational-c-sharp-with-microsoft-certification-exam.txt' en Elasticsearch.
+2026-06-02 22:41:12.018 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:41:12.020 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:41:12.062 [INF] Received HTTP response headers after 41.2466ms - 200
+2026-06-02 22:41:12.064 [INF] End processing HTTP request after 46.5461ms - 200
+2026-06-02 22:42:13.089 [INF] Pregunta: hoolaa → Respuesta generada con 813 chars de contexto.
+2026-06-02 22:42:32.377 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:42:32.380 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:42:36.828 [INF] Received HTTP response headers after 4446.9497ms - 200
+2026-06-02 22:42:36.830 [INF] End processing HTTP request after 4453.6228ms - 200
+2026-06-02 22:43:41.795 [INF] Pregunta: que información tiene este documento actualmente? → Respuesta generada con 813 chars de contexto.
+2026-06-02 22:45:36.365 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:45:36.369 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:45:38.467 [INF] Received HTTP response headers after 2096.4479ms - 200
+2026-06-02 22:45:38.468 [INF] End processing HTTP request after 2103.2182ms - 200
+2026-06-02 22:46:13.487 [INF] Pregunta: perfecto, se podría decir que es un buen resultado? → Respuesta generada con 813 chars de contexto.
+2026-06-02 22:47:46.531 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:47:46.535 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:47:48.646 [INF] Received HTTP response headers after 2110.679ms - 200
+2026-06-02 22:47:48.649 [INF] End processing HTTP request after 2118.6451ms - 200
+2026-06-02 22:49:03.407 [INF] Pregunta: Que examen fue el rendido en este documento? Conoces otros examenes similares en .NET que pueda rendir? → Respuesta generada con 813 chars de contexto.
+2026-06-02 22:54:15.686 [INF] Dividido 'presupuesto.txt' en 2 fragmentos.
+2026-06-02 22:54:15.688 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:54:15.689 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:54:18.565 [INF] Received HTTP response headers after 2874.7753ms - 400
+2026-06-02 22:54:18.566 [INF] End processing HTTP request after 2877.876ms - 400
+2026-06-02 22:54:18.570 [ERR] Error al indexar 'presupuesto.txt'
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 400 (Bad Request).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at ChatRAG.Services.EmbeddingService.GenerateEmbeddingAsync(String text) in C:\Users\Andy\Desktop\ChatRAG\ChatRag\Services\EmbeddingService.cs:line 26
+   at ChatRAG.Services.RagService.IndexTextAsync(String fileName, String content) in C:\Users\Andy\Desktop\ChatRAG\ChatRag\Services\RagService.cs:line 38
+2026-06-02 22:54:38.643 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:54:38.644 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-02 22:54:38.723 [INF] Received HTTP response headers after 77.6802ms - 200
+2026-06-02 22:54:38.725 [INF] End processing HTTP request after 81.3599ms - 200
+2026-06-02 22:55:35.731 [INF] Pregunta: ok, y que información tienen tus documentos actualmente? → Respuesta generada con 813 chars de contexto.
+2026-06-02 22:56:27.015 [INF] Application is shutting down...
+2026-06-02 22:56:27.017 [INF] Connection id "0HNM124KOSBL4", Request id "0HNM124KOSBL4:00000001": the application aborted the connection.
+2026-06-02 22:56:27.025 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-02 22:56:27.027 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-02 22:56:27.029 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-02 22:56:27.030 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 5.3935ms
+2026-06-02 22:56:27.031 [INF] Executed endpoint '/_blazor'
+2026-06-02 22:56:27.036 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=nay2Ilm27r67OJptOwBNag - 101 null null 927449.6509ms

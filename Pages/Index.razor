@@ -1,0 +1,51 @@
+﻿@* ============================================================================
+   ChatRAG - Index / Home Page
+   Ruta: @page "/"
+   
+   Página de bienvenida con cards informativas que guían al usuario:
+   1. Subí documentos: link a /upload
+   2. Preguntá: link a /chat 
+   3. Tecnologías: muestra el stack tecnológico
+   
+   No tiene estado ni lógica (@code = vacío).
+   Es puramente presentacional: usa Bootstrap cards + grid (col-md-4).
+   
+   PageTitle: establece el título de la pestaña del navegador.
+   ============================================================================ *@
+@page "/"
+
+<PageTitle>ChatRAG - Inicio</PageTitle>
+
+<div class="text-center mt-5">
+    <h1>ChatRAG</h1>
+    <p class="lead">Chat con documentos usando Semantic Kernel + Elasticsearch + Ollama</p>
+    <hr />
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">1. Subí documentos</h5>
+                    <p class="card-text">Cargá archivos .txt con la información a consultar.</p>
+                    <a class="btn btn-primary" href="upload">Ir a Upload</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">2. Preguntá</h5>
+                    <p class="card-text">Hacé preguntas sobre el contenido de los documentos.</p>
+                    <a class="btn btn-primary" href="chat">Ir al Chat</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Tecnologías</h5>
+                    <p class="card-text">.NET 9 · Blazor Server · Semantic Kernel · Elasticsearch · Ollama</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@* ============================================================================
+   ChatRAG - Main Layout
+   
+   Layout principal de la aplicación Blazor. Configurado como DefaultLayout
+   en App.razor: <RouteView DefaultLayout="@typeof(MainLayout)" />.
+   
+   ── Estructura ──────────────────────────────────────────────────────────────
+   .page (contenedor flex):
+     .sidebar (columna izquierda):
+       - <NavMenu />: menú de navegación con links a Inicio, Chat, Upload
+     
+     main (columna derecha):
+       .top-row: barra superior con título "ChatRAG - Q&A sobre documentos"
+       article.content: @Body — aquí se renderiza el contenido de la ruta activa
+         (Index, Chat, Upload, etc.)
+   
+   ── PageTitle ───────────────────────────────────────────────────────────────
+   Título default "ChatRAG". Puede ser sobrescrito por cada página usando
+   <PageTitle> propio (ej: "ChatRAG - Chat", "ChatRAG - Inicio").
+   ============================================================================ *@
+@inherits LayoutComponentBase
+
+<PageTitle>ChatRAG</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <span class="text-muted">ChatRAG - Q&A sobre documentos</span>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>

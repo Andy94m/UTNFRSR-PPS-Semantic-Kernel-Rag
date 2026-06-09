@@ -1,0 +1,73 @@
+﻿@* ============================================================================
+   ChatRAG - Host Page
+   Ruta raíz: @page "/" (fallback route)
+   
+   Página host de Blazor Server que renderiza la aplicación completa.
+   Todas las rutas de la app caen acá via MapFallbackToPage("/_Host") en Program.cs.
+   
+   ── Componentes renderizados ────────────────────────────────────────────────
+   - <HeadOutlet />: gestiona el título de la pestaña (PageTitle en cada página)
+   - <App /> con render-mode="ServerPrerendered":
+     * ServerPrerendered: renderiza HTML en el servidor primero (SEO/performance)
+     * Luego Blazor toma el control via SignalR
+   
+   ── Recursos incluidos ──────────────────────────────────────────────────────
+   - bootstrap.min.css: framework CSS (vía CDN local en wwwroot)
+   - site.css: estilos custom de la app
+   - ChatRAG.styles.css: CSS isolation de Blazor (scoped styles por componente)
+   - favicon.png: icono de la pestaña
+   - blazor.server.js: cliente SignalR de Blazor Server
+   
+   ── Blazor Error UI ─────────────────────────────────────────────────────────
+   div#blazor-error-ui: oculto por defecto. Se muestra cuando la conexión
+   SignalR se pierde (circuit disconnected). Incluye:
+   - Mensaje según environment (Staging/Production vs Development)
+   - Link "Reload" para recargar la página
+   - Botón "dismiss" (🗙) para cerrar el mensaje
+   
+   ── Funciones JS ────────────────────────────────────────────────────────────
+   scrollToBottom(element): usada por Chat.razor via JSRuntime.InvokeVoidAsync.
+   Setea element.scrollTop = element.scrollHeight para auto-scroll cuando
+   llegan nuevos mensajes.
+   ============================================================================ *@
+@page "/"
+@using Microsoft.AspNetCore.Components.Web
+@namespace ChatRAG.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="ChatRAG.styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+    <script>
+        function scrollToBottom(element) {
+            if (element) {
+                element.scrollTop = element.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+@* ============================================================================
+   ChatRAG - Chat Component
+   Ruta: @page "/chat"
+   
+   Interfaz de preguntas y respuestas sobre documentos indexados.
+   
+   ── Servicios inyectados ────────────────────────────────────────────────────
+   IChatService ChatService (Singleton via @inject):
+     - Messages: IReadOnlyList<ChatMessage> — historial de la conversación
+     - AskAsync(question): genera respuesta usando RAG + SK + Ollama
+     - ClearHistory(): vacía el historial
+   
+   IJSRuntime JSRuntime (via @inject):
+     - scrollToBottom(): función JS definida en _Host.cshtml para auto-scroll
+   
+   ── Estados de UI ───────────────────────────────────────────────────────────
+   1. Vacío (ChatService.Messages.Count == 0):
+      - Muestra empty-state con icono + texto "Subí documentos..."
+      - No hay input bloqueado
+   
+   2. Conversando:
+      - Itera ChatService.Messages y renderiza cada uno
+      - Clase CSS "message user" o "message assistant" (para estilo por role)
+      - Cada bubble muestra "Tú" o "Asistente" + contenido del mensaje
+   
+   3. Cargando (isLoading = true):
+      - Muestra bubble "Pensando..." con estilo assistant
+      - Input deshabilitado + botón deshabilitado
+   
+   4. Error (statusMessage != ""):
+      - Muestra alerta roja con el mensaje de error
+      - isLoading se desactiva, el input se rehabilita
+   
+   ── Flujo SendMessage() ────────────────────────────────────────────────────
+   1. Guarda userInput en question, limpia userInput inmediatamente
+   2. isLoading = true → UI muestra "Pensando..."
+   3. ChatService.AskAsync(question):
+      a. Agrega mensaje user al historial (inmediato, se refleja en UI)
+      b. Recupera contexto de ES (embedding + KNN, ~1-5s)
+      c. Genera respuesta con LLM (Ollama, ~5-30s)
+      d. Agrega respuesta al historial
+   4. Si excepción: statusMessage = "Error: {ex.Message}"
+   5. finally: isLoading = false
+   
+   ── Eventos del input ──────────────────────────────────────────────────────
+   - Enter: HandleKeyDown → SendMessage (si no está cargando)
+   - Click botón Enviar: SendMessage (si no está vacío ni cargando)
+   - @bind:event="oninput": actualiza userInput en cada tecla (no solo al perder foco)
+   
+   ── Auto-scroll ────────────────────────────────────────────────────────────
+   OnAfterRenderAsync: llama a JS scrollToBottom(messagesContainer) después
+   de cada render. Si JS no está disponible (primer render), captura y silencia
+   la excepción.
+   ============================================================================ *@
+@page "/chat"
+@using ChatRAG.Services
+@inject IChatService ChatService
+@inject IJSRuntime JSRuntime
+
+<div class="chat-page">
+    <div class="chat-header">
+        <h3>Chat con tus documentos</h3>
+        <button class="btn btn-sm btn-outline-secondary" @onclick="ClearChat">Limpiar historial</button>
+    </div>
+
+    <div class="chat-messages" @ref="messagesContainer">
+        @if (ChatService.Messages.Count == 0)
+        {
+            <div class="empty-state">
+                <span class="oi oi-document" style="font-size: 2rem; display: block; margin-bottom: 0.5rem;"></span>
+                <p>Subí documentos en la sección <strong>Upload</strong> y luego hacé preguntas sobre su contenido.</p>
+            </div>
+        }
+
+        @foreach (var message in ChatService.Messages)
+        {
+            <div class="message @(message.Role)">
+                <div class="message-bubble">
+                    <small class="message-role">@(message.Role == "user" ? "Tú" : "Asistente")</small>
+                    <div class="message-content">@message.Content</div>
+                </div>
+            </div>
+        }
+
+        @if (isLoading)
+        {
+            <div class="message assistant">
+                <div class="message-bubble">
+                    <small class="message-role">Asistente</small>
+                    <div class="message-content">
+                        <em>Pensando...</em>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(statusMessage))
+        {
+            <div class="alert alert-danger mt-2">@statusMessage</div>
+        }
+    </div>
+
+    <div class="chat-input">
+        <input @bind="userInput"
+               @bind:event="oninput"
+               @onkeydown="HandleKeyDown"
+               placeholder="Escribí tu pregunta..."
+               disabled="@isLoading"
+               class="form-control" />
+        <button class="btn btn-primary"
+                @onclick="SendMessage"
+                disabled="@(isLoading || string.IsNullOrWhiteSpace(userInput))">
+            Enviar
+        </button>
+    </div>
+</div>
+
+@code {
+    private string userInput = "";
+    private bool isLoading;
+    private string statusMessage = "";
+    private ElementReference messagesContainer;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await ScrollToBottom();
+    }
+
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" && !isLoading && !string.IsNullOrWhiteSpace(userInput))
+        {
+            await SendMessage();
+        }
+    }
+
+    private async Task SendMessage()
+    {
+        if (string.IsNullOrWhiteSpace(userInput) || isLoading) return;
+
+        var question = userInput;
+        userInput = "";
+
+        try
+        {
+            isLoading = true;
+            await ChatService.AskAsync(question);
+        }
+        catch (Exception ex)
+        {
+            statusMessage = $"Error: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void ClearChat()
+    {
+        ChatService.ClearHistory();
+        statusMessage = "";
+    }
+
+    private async Task ScrollToBottom()
+    {
+        try
+        {
+            await JSRuntime.InvokeVoidAsync("scrollToBottom", messagesContainer);
+        }
+        catch
+        {
+            // Ignorar si JS no está disponible aún
+        }
+    }
+}

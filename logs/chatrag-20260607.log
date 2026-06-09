@@ -1,0 +1,55 @@
+2026-06-07 21:48:41.059 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-07 21:48:41.947 [INF] Now listening on: http://localhost:5120
+2026-06-07 21:48:41.949 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-07 21:48:41.951 [INF] Hosting environment: Development
+2026-06-07 21:48:41.952 [INF] Content root path: C:\Users\Andy\Desktop\ChatRAG\ChatRAG
+2026-06-07 21:48:56.345 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ - null null
+2026-06-07 21:48:56.356 [WRN] Failed to determine the https port for redirect.
+2026-06-07 21:48:56.376 [INF] Executing endpoint '/_Host'
+2026-06-07 21:48:56.392 [INF] Route matched with {page = "/_Host"}. Executing page /_Host
+2026-06-07 21:48:56.403 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-07 21:48:56.405 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-07 21:48:56.531 [INF] Executed page /_Host in 134.9819ms
+2026-06-07 21:48:56.544 [INF] Executed endpoint '/_Host'
+2026-06-07 21:48:56.551 [INF] Request finished HTTP/1.1 GET http://localhost:5120/ - 200 null text/html; charset=utf-8 207.4427ms
+2026-06-07 21:48:56.604 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/bootstrap/bootstrap.min.css - null null
+2026-06-07 21:48:56.604 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/site.css - null null
+2026-06-07 21:48:56.606 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ChatRAG.styles.css - null null
+2026-06-07 21:48:56.609 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - null null
+2026-06-07 21:48:56.615 [INF] Executing endpoint 'Blazor static files'
+2026-06-07 21:48:56.630 [INF] Sending file. Request path: '/ChatRAG.styles.css'. Physical path: 'C:\Users\Andy\Desktop\ChatRAG\ChatRAG\obj\Debug\net9.0\scopedcss\bundle\ChatRAG.styles.css'
+2026-06-07 21:48:56.630 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Andy\Desktop\ChatRAG\ChatRAG\wwwroot\css\site.css'
+2026-06-07 21:48:56.631 [INF] Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+2026-06-07 21:48:56.632 [INF] Request finished HTTP/1.1 GET http://localhost:5120/ChatRAG.styles.css - 200 3005 text/css 25.7882ms
+2026-06-07 21:48:56.633 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/site.css - 200 4466 text/css 29.5704ms
+2026-06-07 21:48:56.634 [INF] Executed endpoint 'Blazor static files'
+2026-06-07 21:48:56.635 [INF] Sending file. Request path: '/css/bootstrap/bootstrap.min.css'. Physical path: 'C:\Users\Andy\Desktop\ChatRAG\ChatRAG\wwwroot\css\bootstrap\bootstrap.min.css'
+2026-06-07 21:48:56.642 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - 200 153381 text/javascript 33.2014ms
+2026-06-07 21:48:56.642 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/bootstrap/bootstrap.min.css - 200 162720 text/css 38.9545ms
+2026-06-07 21:48:56.767 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/css/open-iconic-bootstrap.min.css - null null
+2026-06-07 21:48:56.789 [INF] Sending file. Request path: '/css/open-iconic/font/css/open-iconic-bootstrap.min.css'. Physical path: 'C:\Users\Andy\Desktop\ChatRAG\ChatRAG\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css'
+2026-06-07 21:48:56.791 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/css/open-iconic-bootstrap.min.css - 200 9395 text/css 24.2757ms
+2026-06-07 21:48:56.795 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor/initializers - null null
+2026-06-07 21:48:56.798 [INF] Executing endpoint 'Blazor initializers'
+2026-06-07 21:48:56.803 [INF] Executed endpoint 'Blazor initializers'
+2026-06-07 21:48:56.804 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor/initializers - 200 null application/json; charset=utf-8 9.449ms
+2026-06-07 21:48:56.819 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/fonts/open-iconic.woff - null null
+2026-06-07 21:48:56.822 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-07 21:48:56.826 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-07 21:48:56.835 [INF] Sending file. Request path: '/css/open-iconic/font/fonts/open-iconic.woff'. Physical path: 'C:\Users\Andy\Desktop\ChatRAG\ChatRAG\wwwroot\css\open-iconic\font\fonts\open-iconic.woff'
+2026-06-07 21:48:56.835 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-07 21:48:56.837 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/open-iconic/font/fonts/open-iconic.woff - 200 14984 application/font-woff 18.3342ms
+2026-06-07 21:48:56.838 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 16.5617ms
+2026-06-07 21:48:56.840 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=ZucJy4bLxaYXWthvlC2-tg - null null
+2026-06-07 21:48:56.850 [INF] Request starting HTTP/1.1 GET http://localhost:5120/favicon.png - null null
+2026-06-07 21:48:56.853 [INF] Executing endpoint '/_blazor'
+2026-06-07 21:48:56.868 [INF] Sending file. Request path: '/favicon.png'. Physical path: 'C:\Users\Andy\Desktop\ChatRAG\ChatRAG\wwwroot\favicon.png'
+2026-06-07 21:48:56.876 [INF] Request finished HTTP/1.1 GET http://localhost:5120/favicon.png - 200 1148 image/png 25.5776ms
+2026-06-07 21:49:25.443 [INF] Application is shutting down...
+2026-06-07 21:49:25.446 [INF] Connection id "0HNM4UUS6LPF1", Request id "0HNM4UUS6LPF1:00000001": the application aborted the connection.
+2026-06-07 21:49:25.453 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-07 21:49:25.456 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-07 21:49:25.456 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-07 21:49:25.457 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 3.9415ms
+2026-06-07 21:49:25.458 [INF] Executed endpoint '/_blazor'
+2026-06-07 21:49:25.461 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=ZucJy4bLxaYXWthvlC2-tg - 101 null null 28621.7243ms

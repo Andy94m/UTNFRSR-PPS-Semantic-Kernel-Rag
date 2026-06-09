@@ -1,0 +1,62 @@
+﻿@* ============================================================================
+   ChatRAG - Navigation Menu
+   
+   Menú lateral con navegación entre las 3 secciones de la app.
+   Renderizado dentro de <div class="sidebar"> en MainLayout.razor.
+   
+   ── Enlaces ─────────────────────────────────────────────────────────────────
+   1. Inicio (/): NavLink con Match="NavLinkMatch.All" (solo activo en raíz exacta)
+   2. Chat (/chat): interfaz de preguntas y respuestas
+   3. Upload (/upload): subida de archivos .txt
+   
+   Cada NavLink usa iconos de Open Iconic (oi-home, oi-chat, oi-cloud-upload).
+   NavLink agrega clase "active" automáticamente cuando la URL coincide.
+   
+   ── Colapso responsive ───────────────────────────────────────────────────────
+   collapseNavMenu (bool): estado de colapso del menú en pantallas chicas.
+     - true: NavMenuCssClass = "collapse" (menú oculto)
+     - false: NavMenuCssClass = null (menú visible)
+   ToggleNavMenu(): alterna entre colapsado/expandido.
+     - Se llama desde el botón hamburguesa (navbar-toggler)
+     - También desde click en cualquier nav-item (@onclick="ToggleNavMenu")
+       para cerrar el menú después de navegar en mobile
+   ============================================================================ *@
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">ChatRAG</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Inicio
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="chat">
+                <span class="oi oi-chat" aria-hidden="true"></span> Chat
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="upload">
+                <span class="oi oi-cloud-upload" aria-hidden="true"></span> Upload
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

@@ -1,0 +1,129 @@
+@* ============================================================================
+   ChatRAG - Upload Component
+   Ruta: @page "/upload"
+   
+   Interfaz para subir archivos .txt e indexarlos en Elasticsearch.
+   
+   ── Servicios inyectados ────────────────────────────────────────────────────
+   IRagService RagService (Singleton via @inject):
+     - IndexTextAsync(fileName, content): fragmenta → embedea → indexa en ES
+       (pipeline completo: TextChunker → Embedding → Elasticsearch)
+   
+   ── Estados de UI ───────────────────────────────────────────────────────────
+   1. Reposo: InputFile visible, sin mensajes
+   2. Procesando (isProcessing = true):
+      - InputFile deshabilitado (disabled="@isProcessing")
+      - Alerta azul "Procesando archivo... Indexando fragmentos en Elasticsearch."
+   3. Éxito (statusMessage != "" && !isError):
+      - Alerta verde: "{file.Name} indexado correctamente (N caracteres)"
+      - Se limpia sola después de 2 segundos (Task.Delay)
+   4. Error (statusMessage != "" && isError):
+      - Alerta roja: "Error con {file.Name}: {ex.Message}"
+      - Se limpia sola después de 2 segundos
+   
+   ── Flujo OnFileSelected(InputFileChangeEventArgs) ─────────────────────────
+   1. Itera sobre hasta 10 archivos (e.GetMultipleFiles(10))
+   2. Por cada archivo:
+      a. isProcessing = true, statusMessage = "Procesando {file.Name}..."
+      b. file.OpenReadStream(maxAllowedSize: 10MB):
+         - 10 MB es el límite máximo por archivo
+         - Usa StreamReader para leer el contenido completo como string
+      c. RagService.IndexTextAsync(file.Name, content):
+         - Crea índice ES si no existe
+         - TextChunkerService.ChunkText(content) → N fragmentos
+         - Por cada fragmento: EmbeddingService → ElasticsearchService.IndexChunkAsync
+         - Cada fragmento indexado individualmente (N llamadas a ES)
+      d. Si éxito: mensaje verde con cantidad de caracteres
+      e. Si excepción: mensaje rojo con ex.Message
+      f. finally:
+         - isProcessing = false
+         - StateHasChanged() (forzar render para UI thread)
+         - Task.Delay(2000): mostrar mensaje 2 segundos
+         - statusMessage = "" (limpiar)
+   
+   ── Limitaciones ────────────────────────────────────────────────────────────
+   - Solo archivos .txt (accept=".txt")
+   - Máximo 10 archivos por selección
+   - Máximo 10 MB por archivo
+   - Procesamiento secuencial (uno por uno, no paralelo)
+   - No hay validación de encoding (asume UTF-8)
+   - No hay progreso visible por fragmento (solo "Procesando...")
+   ============================================================================ *@
+@page "/upload"
+@using ChatRAG.Services
+@inject IRagService RagService
+@inject IJSRuntime JS
+
+<div class="upload-page">
+    <h3>Subir documentos</h3>
+    <p class="text-muted">Seleccioná archivos de texto (.txt) para indexarlos en la base de conocimiento.</p>
+
+    <div class="upload-area">
+        <span class="oi oi-cloud-upload" style="font-size: 3rem; display: block; margin-bottom: 0.5rem;"></span>
+        <p>Seleccioná un archivo .txt para indexar</p>
+        <InputFile OnChange="OnFileSelected" accept=".txt" multiple disabled="@isProcessing" class="btn btn-primary" />
+    </div>
+
+    @if (isProcessing)
+    {
+        <div class="alert alert-info mt-3">
+            Procesando archivo... Indexando fragmentos en Elasticsearch.
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(statusMessage))
+    {
+        <div class="alert @(isError ? "alert-danger" : "alert-success") mt-3">
+            @statusMessage
+        </div>
+    }
+
+    <div class="instructions mt-4">
+        <h5>Requisitos</h5>
+        <ol>
+            <li>Elasticsearch corriendo: <code>docker compose up</code> desde la raíz del proyecto.</li>
+            <li>Ollama con modelos: <code>ollama pull deepseek-r1</code> y <code>ollama pull all-minilm</code>.</li>
+            <li>Subí archivos .txt con la información a consultar.</li>
+            <li>Andá a <strong>Chat</strong> para hacer preguntas.</li>
+        </ol>
+    </div>
+</div>
+
+@code {
+    private string statusMessage = "";
+    private bool isError;
+    private bool isProcessing;
+
+    private async Task OnFileSelected(InputFileChangeEventArgs e)
+    {
+        foreach (var file in e.GetMultipleFiles(10))
+        {
+            isProcessing = true;
+            statusMessage = $"Procesando {file.Name}...";
+
+            try
+            {
+                using var stream = file.OpenReadStream(maxAllowedSize: 10 * 1024 * 1024); // 10 MB máximo
+                using var reader = new StreamReader(stream);
+                var content = await reader.ReadToEndAsync();
+
+                await RagService.IndexTextAsync(file.Name, content);
+
+                statusMessage = $"{file.Name} indexado correctamente ({content.Length} caracteres).";
+                isError = false;
+            }
+            catch (Exception ex)
+            {
+                statusMessage = $"Error con {file.Name}: {ex.Message}";
+                isError = true;
+            }
+            finally
+            {
+                isProcessing = false;
+                StateHasChanged();
+                await Task.Delay(2000);
+                statusMessage = "";
+            }
+        }
+    }
+}

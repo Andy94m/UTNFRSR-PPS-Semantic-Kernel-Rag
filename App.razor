@@ -1,0 +1,34 @@
+﻿@* ============================================================================
+   ChatRAG - App Component (Root)
+   
+   Componente raíz de Blazor Server. Renderizado desde _Host.cshtml:
+     <component type="typeof(App)" render-mode="ServerPrerendered" />
+   
+   ── Router ──────────────────────────────────────────────────────────────────
+   AppAssembly="@typeof(App).Assembly": escanea el assembly actual (ChatRAG.dll)
+   en busca de componentes con directiva @page.
+   
+   Found (ruta encontrada):
+     - RouteView: renderiza el componente de la ruta con el layout default
+     - DefaultLayout: MainLayout (definido en Shared/MainLayout.razor)
+     - FocusOnNavigate: mueve el foco al primer <h1> al navegar
+       (accesibilidad: lector de pantalla anuncia la nueva página)
+   
+   NotFound (ruta no encontrada / 404):
+     - PageTitle: "Not found"
+     - LayoutView: renderiza dentro del MainLayout (mantiene navegación)
+     - Mensaje: "Sorry, there's nothing at this address." con role="alert"
+       (accesibilidad: lector de pantalla anuncia el error)
+   ============================================================================ *@
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
