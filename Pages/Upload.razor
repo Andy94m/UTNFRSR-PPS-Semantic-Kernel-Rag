@@ -54,6 +54,7 @@
 @inject IRagService RagService
 @inject IDocumentParserService DocumentParser
 @inject IJSRuntime JS
+@inject ILogger<Upload> Logger
 
 <div class="upload-page">
     <h3>Subir documentos</h3>
@@ -114,6 +115,7 @@
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex, "Error al procesar '{FileName}'", file.Name);
                 statusMessage = $"Error con {file.Name}: {ex.Message}";
                 isError = true;
             }

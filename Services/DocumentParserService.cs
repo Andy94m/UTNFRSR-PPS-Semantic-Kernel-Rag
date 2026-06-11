@@ -17,14 +17,22 @@ public class DocumentParserService : IDocumentParserService
     {
         var ext = Path.GetExtension(fileName).ToLowerInvariant();
 
-        return ext switch
+        try
         {
-            ".txt" => await ExtractTxtAsync(stream),
-            ".pdf" => await Task.Run(() => ExtractPdf(stream)),
-            ".docx" => await Task.Run(() => ExtractDocx(stream)),
-            _ => throw new NotSupportedException(
-                $"Formato no soportado: '{ext}'. Formatos aceptados: .txt, .pdf, .docx")
-        };
+            return ext switch
+            {
+                ".txt" => await ExtractTxtAsync(stream),
+            ".pdf" => await ExtractPdf(stream, fileName),
+            ".docx" => await ExtractDocx(stream, fileName),
+                _ => throw new NotSupportedException(
+                    $"Formato no soportado: '{ext}'. Formatos aceptados: .txt, .pdf, .docx")
+            };
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error al extraer texto de '{FileName}'", fileName);
+            throw;
+        }
     }
 
     private static async Task<string> ExtractTxtAsync(Stream stream)
@@ -33,31 +41,55 @@ public class DocumentParserService : IDocumentParserService
         return await reader.ReadToEndAsync();
     }
 
-    private static string ExtractPdf(Stream stream)
+    private static async Task<string> ExtractPdf(Stream stream, string fileName)
     {
-        using var pdf = PdfDocument.Open(stream);
-        var pages = new List<string>();
-
-        foreach (var page in pdf.GetPages())
+        try
         {
-            var text = page.Text;
-            if (!string.IsNullOrWhiteSpace(text))
-                pages.Add(text);
-        }
+            using var ms = new MemoryStream();
+            await stream.CopyToAsync(ms);
+            ms.Position = 0;
 
-        return string.Join("\n\n", pages);
+            using var pdf = PdfDocument.Open(ms);
+            var pages = new List<string>();
+
+            foreach (var page in pdf.GetPages())
+            {
+                var text = page.Text;
+                if (!string.IsNullOrWhiteSpace(text))
+                    pages.Add(text);
+            }
+
+            return string.Join("\n\n", pages);
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException(
+                $"No se pudo leer el PDF '{fileName}': {ex.Message}", ex);
+        }
     }
 
-    private static string ExtractDocx(Stream stream)
+    private static async Task<string> ExtractDocx(Stream stream, string fileName)
     {
-        using var doc = WordprocessingDocument.Open(stream, false);
-        var body = doc.MainDocumentPart?.Document.Body;
-        if (body == null) return string.Empty;
+        try
+        {
+            using var ms = new MemoryStream();
+            await stream.CopyToAsync(ms);
+            ms.Position = 0;
 
-        var paragraphs = body.Elements<Paragraph>()
-            .Select(p => p.InnerText)
-            .Where(t => !string.IsNullOrWhiteSpace(t));
+            using var doc = WordprocessingDocument.Open(ms, false);
+            var body = doc.MainDocumentPart?.Document.Body;
+            if (body == null) return string.Empty;
 
-        return string.Join("\n\n", paragraphs);
+            var paragraphs = body.Elements<Paragraph>()
+                .Select(p => p.InnerText)
+                .Where(t => !string.IsNullOrWhiteSpace(t));
+
+            return string.Join("\n\n", paragraphs);
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException(
+                $"No se pudo leer el DOCX '{fileName}': {ex.Message}", ex);
+        }
     }
 }
