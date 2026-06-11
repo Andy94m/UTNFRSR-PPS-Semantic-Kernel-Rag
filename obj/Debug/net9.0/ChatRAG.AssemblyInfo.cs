@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChatRAG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a606441d9020baba430a70b15356021c443a8a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83c8fd8ded4b00538860cea39ce17e00588a8a54")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChatRAG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChatRAG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
