@@ -79,8 +79,13 @@ builder.Services.AddSingleton<Kernel>(sp =>
     var uri = config["Uri"] ?? "http://localhost:11434";
     var chatModel = config["ChatModel"] ?? "deepseek-r1";
 
+    var httpClient = new HttpClient
+    {
+        BaseAddress = new Uri(uri),
+        Timeout = TimeSpan.FromMinutes(5)
+    };
     var kernelBuilder = Kernel.CreateBuilder();
-    kernelBuilder.AddOllamaChatCompletion(chatModel, new Uri(uri));
+    kernelBuilder.AddOllamaChatCompletion(chatModel, httpClient);
     return kernelBuilder.Build();
 });
 
@@ -89,7 +94,7 @@ builder.Services.AddHttpClient<IEmbeddingService, EmbeddingService>(client =>
 {
     var uri = builder.Configuration.GetSection("Ollama")["Uri"] ?? "http://localhost:11434";
     client.BaseAddress = new Uri(uri);
-    client.Timeout = TimeSpan.FromSeconds(60);
+    client.Timeout = TimeSpan.FromMinutes(5);
 });
 
 // --- Elasticsearch (vector store) ---
