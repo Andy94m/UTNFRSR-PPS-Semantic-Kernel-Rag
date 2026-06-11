@@ -103,6 +103,7 @@ builder.Services.AddSingleton<IElasticsearchService>(sp =>
 builder.Services.AddSingleton<ITextChunkerService, TextChunkerService>();
 builder.Services.AddSingleton<IRagService, RagService>();
 builder.Services.AddSingleton<IChatService, ChatService>();
+builder.Services.AddSingleton<IDocumentParserService, DocumentParserService>();
 
 var app = builder.Build();
 

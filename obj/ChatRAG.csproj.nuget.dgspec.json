@@ -50,6 +50,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
             "Elastic.Clients.Elasticsearch": {
               "target": "Package",
               "version": "[8.17.0, )"
@@ -61,6 +65,10 @@
             "Microsoft.SemanticKernel.Connectors.Ollama": {
               "target": "Package",
               "version": "[1.77.0-alpha, )"
+            },
+            "PdfPig": {
+              "target": "Package",
+              "version": "[0.1.9, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",

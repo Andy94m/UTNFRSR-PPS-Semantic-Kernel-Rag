@@ -8,9 +8,11 @@
     ".NETCoreApp,Version=v9.0": {
       "ChatRAG/1.0.0": {
         "dependencies": {
+          "DocumentFormat.OpenXml": "3.3.0",
           "Elastic.Clients.Elasticsearch": "8.17.0",
           "Microsoft.SemanticKernel": "1.77.0",
           "Microsoft.SemanticKernel.Connectors.Ollama": "1.77.0-alpha",
+          "PdfPig": "0.1.9",
           "Serilog.AspNetCore": "10.0.0"
         },
         "runtime": {
@@ -39,6 +41,28 @@
           "lib/net8.0/Azure.Core.dll": {
             "assemblyVersion": "1.51.1.0",
             "fileVersion": "1.5100.126.10405"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml/3.3.0": {
+        "dependencies": {
+          "DocumentFormat.OpenXml.Framework": "3.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.3.0.0"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml.Framework/3.3.0": {
+        "dependencies": {
+          "System.IO.Packaging": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.3.0.0"
           }
         }
       },
@@ -395,6 +419,38 @@
           }
         }
       },
+      "PdfPig/0.1.9": {
+        "runtime": {
+          "lib/net8.0/UglyToad.PdfPig.Core.dll": {
+            "assemblyVersion": "0.1.9.0",
+            "fileVersion": "0.1.9.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.DocumentLayoutAnalysis.dll": {
+            "assemblyVersion": "0.1.9.0",
+            "fileVersion": "0.1.9.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Fonts.dll": {
+            "assemblyVersion": "0.1.9.0",
+            "fileVersion": "0.1.9.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Package.dll": {
+            "assemblyVersion": "0.1.8.0",
+            "fileVersion": "0.1.8.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Tokenization.dll": {
+            "assemblyVersion": "0.1.9.0",
+            "fileVersion": "0.1.9.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Tokens.dll": {
+            "assemblyVersion": "0.1.9.0",
+            "fileVersion": "0.1.9.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.dll": {
+            "assemblyVersion": "0.1.9.0",
+            "fileVersion": "0.1.9.0"
+          }
+        }
+      },
       "Serilog/4.3.0": {
         "runtime": {
           "lib/net9.0/Serilog.dll": {
@@ -528,6 +584,14 @@
           }
         }
       },
+      "System.IO.Packaging/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.IO.Packaging.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
       "System.IO.Pipelines/10.0.6": {
         "runtime": {
           "lib/net9.0/System.IO.Pipelines.dll": {
@@ -634,6 +698,20 @@
       "sha512": "sha512-JRANrRvN5O5FFRh+pMUb8qqWU7jBQ39qXEbVr7Rkb1/s7rqc6RSzVHKGBz5Ro1gDy2WSGjG5YEOJKpPIBiCMcA==",
       "path": "azure.core/1.51.1",
       "hashPath": "azure.core.1.51.1.nupkg.sha512"
+    },
+    "DocumentFormat.OpenXml/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JogRPJNiE6kKvbuCqVRX691pPWeGMqdQgjrUwRYkdpfkMmtElfqAgcRR73geYj7OtBeEpstldZXXzJw27LUI9w==",
+      "path": "documentformat.openxml/3.3.0",
+      "hashPath": "documentformat.openxml.3.3.0.nupkg.sha512"
+    },
+    "DocumentFormat.OpenXml.Framework/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R5CLzEoeyr7XDB7g3NTxRobcU19agaxVAhGZm+fZUShJGiU4bw8oUgnA2BNFepigJckfFMayOBMAbV3kDXNInA==",
+      "path": "documentformat.openxml.framework/3.3.0",
+      "hashPath": "documentformat.openxml.framework.3.3.0.nupkg.sha512"
     },
     "Elastic.Clients.Elasticsearch/8.17.0": {
       "type": "package",
@@ -852,6 +930,13 @@
       "path": "openai/2.10.0",
       "hashPath": "openai.2.10.0.nupkg.sha512"
     },
+    "PdfPig/0.1.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VU27oq5O0rpD+zWiD639xXkSHtsNXqbPpYV0pzYg9VPhDibH1cq1i67f9DuW2WnzDVEti0HipLcZxDhdayIzGg==",
+      "path": "pdfpig/0.1.9",
+      "hashPath": "pdfpig.0.1.9.nupkg.sha512"
+    },
     "Serilog/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -928,6 +1013,13 @@
       "sha512": "sha512-v/YvmOpq+lv50oxxIDSvZlgiFD2m38DogHTE4MToMEGf6HtgBAmy8gB7Oq0C2pBt+6/bLvUnzLxubWFcvfzTsQ==",
       "path": "system.diagnostics.diagnosticsource/10.0.6",
       "hashPath": "system.diagnostics.diagnosticsource.10.0.6.nupkg.sha512"
+    },
+    "System.IO.Packaging/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KYkIOAvPexQOLDxPO2g0BVoWInnQhPpkFzRqvNrNrMhVT6kqhVr0zEb6KCHlptLFukxnZrjuMVAnxK7pOGUYrw==",
+      "path": "system.io.packaging/8.0.1",
+      "hashPath": "system.io.packaging.8.0.1.nupkg.sha512"
     },
     "System.IO.Pipelines/10.0.6": {
       "type": "package",

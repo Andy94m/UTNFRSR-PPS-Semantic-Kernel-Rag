@@ -44,6 +44,11 @@ classDiagram
         +Task~List~TextChunk~~ SearchAsync(float[] queryEmbedding, int topK)
     }
 
+    class IDocumentParserService {
+        <<interface>>
+        +Task~string~ ExtractTextAsync(string fileName, Stream stream)
+    }
+
     class ITextChunkerService {
         <<interface>>
         +List~string~ ChunkText(string text, int maxTokens, int overlap)
@@ -73,6 +78,11 @@ classDiagram
     class ElasticsearchService {
         -ElasticsearchClient _client
         -const string IndexName = "text_chunks"
+    }
+
+    class DocumentParserService {
+        -ILogger _logger
+        +Task~string~ ExtractTextAsync(string fileName, Stream stream)
     }
 
     class TextChunkerService {
@@ -116,6 +126,12 @@ classDiagram
     class ElasticsearchClient {
         <<Elastic.Clients.Elasticsearch>>
     }
+    class PdfPig {
+        <<UglyToad.PdfPig>>
+    }
+    class OpenXml {
+        <<DocumentFormat.OpenXml>>
+    }
 
     %% ==================== RELACIONES ====================
     ChatService ..|> IChatService
@@ -123,6 +139,7 @@ classDiagram
     EmbeddingService ..|> IEmbeddingService
     ElasticsearchService ..|> IElasticsearchService
     TextChunkerService ..|> ITextChunkerService
+    DocumentParserService ..|> IDocumentParserService
 
     ChatService o--> Kernel : usa
     ChatService o--> IRagService : inyectado
@@ -140,6 +157,7 @@ classDiagram
     TextChunkerService ..> TextChunk : produce fragmentos
 
     UploadPage o--> IRagService : inyectado
+    UploadPage o--> IDocumentParserService : inyectado
     ChatPage o--> IChatService : inyectado
 
     Program ..> ChatService : registra (Singleton)
@@ -147,6 +165,7 @@ classDiagram
     Program ..> EmbeddingService : registra (Singleton)
     Program ..> ElasticsearchService : registra (Singleton)
     Program ..> TextChunkerService : registra (Singleton)
+    Program ..> DocumentParserService : registra (Singleton)
     Program ..> Kernel : registra (Singleton)
 ```
 
@@ -192,14 +211,23 @@ sequenceDiagram
 sequenceDiagram
     actor User as Usuario
     participant UpUI as Upload.razor
+    participant Parser as DocumentParserService
     participant RAG as RagService
     participant Chunker as TextChunkerService
     participant Embed as EmbeddingService
     participant ES as ElasticsearchService
 
-    User->>UpUI: selecciona .txt
+    User->>UpUI: selecciona archivo
     UpUI->>UpUI: isProcessing = true
-    UpUI->>UpUI: lee archivo (StreamReader)
+    UpUI->>Parser: ExtractTextAsync(fileName, stream)
+    alt .txt
+        Parser->>Parser: StreamReader.ReadToEndAsync()
+    else .pdf
+        Parser->>Parser: PdfPig → iterar páginas
+    else .docx
+        Parser->>Parser: OpenXml → iterar párrafos
+    end
+    Parser-->>UpUI: string content
     UpUI->>RAG: IndexTextAsync(fileName, content)
     RAG->>ES: CreateIndexIfNotExistsAsync()
     ES-->>RAG: ok (ya existe o se creó)
@@ -222,27 +250,28 @@ sequenceDiagram
 ## Diagrama de Paquetes
 
 ```mermaid
-packages
-    package "ChatRAG" {
-        package "Models" {
-            component ChatMessage
-            component TextChunk
-        }
-        package "Services" {
-            component "Interfaces (IChatService, IRagService, IEmbeddingService, IElasticsearchService, ITextChunkerService)"
-            component "Implementaciones (ChatService, RagService, EmbeddingService, ElasticsearchService, TextChunkerService)"
-        }
-        package "Pages" {
-            component "Chat.razor"
-            component "Upload.razor"
-            component "Index.razor"
-        }
-        component "Program.cs"
-    }
-    package "Infraestructura externa" {
-        component "Ollama (deepseek-r1 + all-minilm)"
-        component "Elasticsearch 8.17"
-    }
+graph TB
+    subgraph ChatRAG
+        direction TB
+        subgraph Models
+            CM[ChatMessage]
+            TC[TextChunk]
+        end
+        subgraph Services
+            I[Interfaces<br/>IChatService, IRagService, IEmbeddingService,<br/>IElasticsearchService, ITextChunkerService,<br/>IDocumentParserService]
+            Impl[Implementaciones<br/>ChatService, RagService, EmbeddingService,<br/>ElasticsearchService, TextChunkerService,<br/>DocumentParserService]
+        end
+        subgraph Pages
+            CH[Chat.razor]
+            UP[Upload.razor]
+            IX[Index.razor]
+        end
+        P[Program.cs]
+    end
+    subgraph Externo
+        O[Ollama<br/>deepseek-r1 + all-minilm]
+        ES[Elasticsearch 8.17]
+    end
 ```
 
 ---

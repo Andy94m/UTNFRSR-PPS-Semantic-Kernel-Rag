@@ -52,16 +52,17 @@
 @page "/upload"
 @using ChatRAG.Services
 @inject IRagService RagService
+@inject IDocumentParserService DocumentParser
 @inject IJSRuntime JS
 
 <div class="upload-page">
     <h3>Subir documentos</h3>
-    <p class="text-muted">Seleccioná archivos de texto (.txt) para indexarlos en la base de conocimiento.</p>
+    <p class="text-muted">Seleccioná archivos (.txt, .pdf, .docx) para indexarlos en la base de conocimiento.</p>
 
     <div class="upload-area">
         <span class="oi oi-cloud-upload" style="font-size: 3rem; display: block; margin-bottom: 0.5rem;"></span>
-        <p>Seleccioná un archivo .txt para indexar</p>
-        <InputFile OnChange="OnFileSelected" accept=".txt" multiple disabled="@isProcessing" class="btn btn-primary" />
+        <p>Seleccioná un archivo para indexar</p>
+        <InputFile OnChange="OnFileSelected" accept=".txt,.pdf,.docx" multiple disabled="@isProcessing" class="btn btn-primary" />
     </div>
 
     @if (isProcessing)
@@ -83,7 +84,7 @@
         <ol>
             <li>Elasticsearch corriendo: <code>docker compose up</code> desde la raíz del proyecto.</li>
             <li>Ollama con modelos: <code>ollama pull deepseek-r1</code> y <code>ollama pull all-minilm</code>.</li>
-            <li>Subí archivos .txt con la información a consultar.</li>
+            <li>Subí archivos (.txt, .pdf, .docx) con la información a consultar.</li>
             <li>Andá a <strong>Chat</strong> para hacer preguntas.</li>
         </ol>
     </div>
@@ -104,8 +105,7 @@
             try
             {
                 using var stream = file.OpenReadStream(maxAllowedSize: 10 * 1024 * 1024); // 10 MB máximo
-                using var reader = new StreamReader(stream);
-                var content = await reader.ReadToEndAsync();
+                var content = await DocumentParser.ExtractTextAsync(file.Name, stream);
 
                 await RagService.IndexTextAsync(file.Name, content);
 
