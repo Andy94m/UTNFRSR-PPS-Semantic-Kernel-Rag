@@ -55,6 +55,7 @@
 @inject IDocumentParserService DocumentParser
 @inject IJSRuntime JS
 @inject ILogger<Upload> Logger
+@inject NavigationManager Navigation
 
 <div class="upload-page">
     <h3>Subir documentos</h3>
@@ -75,8 +76,12 @@
 
     @if (!string.IsNullOrEmpty(statusMessage))
     {
-        <div class="alert @(isError ? "alert-danger" : "alert-success") mt-3">
-            @statusMessage
+        <div class="alert @(isError ? "alert-danger" : "alert-success") mt-3 d-flex justify-content-between align-items-center">
+            <span>@statusMessage</span>
+            @if (!isError)
+            {
+                <a href="/chat" class="btn btn-sm btn-success ms-2">Ir al chat</a>
+            }
         </div>
     }
 
@@ -118,13 +123,14 @@
                 Logger.LogError(ex, "Error al procesar '{FileName}'", file.Name);
                 statusMessage = $"Error con {file.Name}: {ex.Message}";
                 isError = true;
+                StateHasChanged();
+                await Task.Delay(2000);
+                statusMessage = "";
             }
             finally
             {
                 isProcessing = false;
-                StateHasChanged();
-                await Task.Delay(2000);
-                statusMessage = "";
+                await InvokeAsync(StateHasChanged);
             }
         }
     }

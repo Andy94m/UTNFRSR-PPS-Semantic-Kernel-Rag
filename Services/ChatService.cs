@@ -84,6 +84,8 @@ public class ChatService : IChatService
 
     public IReadOnlyList<ChatMessage> Messages => _messages;
 
+    public Task<bool> HasDocumentsAsync() => _ragService.HasDocumentsAsync();
+
     public async Task<string> AskAsync(string question)
     {
         _messages.Add(new ChatMessage { Role = "user", Content = question, Timestamp = DateTime.UtcNow });
@@ -131,6 +133,11 @@ public class ChatService : IChatService
             _logger.LogError(ex, "Error en AskAsync para pregunta: {Question}", question);
             throw;
         }
+    }
+
+    public void AddAssistantMessage(string content)
+    {
+        _messages.Add(new ChatMessage { Role = "assistant", Content = content, Timestamp = DateTime.UtcNow });
     }
 
     public void ClearHistory()

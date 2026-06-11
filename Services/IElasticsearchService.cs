@@ -35,4 +35,5 @@ public interface IElasticsearchService
     Task CreateIndexIfNotExistsAsync(int dimensions = 384);
     Task IndexChunkAsync(TextChunk chunk);
     Task<List<TextChunk>> SearchAsync(float[] queryEmbedding, int topK = 5);
+    Task<long> GetDocumentCountAsync();
 }

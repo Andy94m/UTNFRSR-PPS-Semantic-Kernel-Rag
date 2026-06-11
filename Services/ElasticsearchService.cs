@@ -135,4 +135,10 @@ public class ElasticsearchService : IElasticsearchService
 
         return response.Documents.ToList();
     }
+
+    public async Task<long> GetDocumentCountAsync()
+    {
+        var response = await _client.CountAsync<TextChunk>(IndexName);
+        return response.IsValidResponse ? response.Count : 0;
+    }
 }

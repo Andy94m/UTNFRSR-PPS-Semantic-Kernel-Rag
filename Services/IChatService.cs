@@ -39,4 +39,6 @@ public interface IChatService
     IReadOnlyList<ChatMessage> Messages { get; }
     Task<string> AskAsync(string question);
     void ClearHistory();
+    Task<bool> HasDocumentsAsync();
+    void AddAssistantMessage(string content);
 }

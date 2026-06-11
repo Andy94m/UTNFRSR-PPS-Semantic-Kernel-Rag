@@ -639,3 +639,100 @@ System.Threading.Tasks.TaskCanceledException: The request was canceled due to th
 2026-06-11 16:54:21.742 [INF] Executed endpoint '/_blazor'
 2026-06-11 16:54:21.743 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=cke3RHlJj_o_HononYqSUA - 101 null null 127238.9421ms
 2026-06-11 16:54:24.500 [INF] Application is shutting down...
+2026-06-11 17:03:15.366 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-11 17:03:15.484 [INF] Now listening on: http://localhost:5120
+2026-06-11 17:03:15.488 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-11 17:03:15.489 [INF] Hosting environment: Development
+2026-06-11 17:03:15.490 [INF] Content root path: C:\Users\Andy\Desktop\ChatRAG\ChatRAG
+2026-06-11 17:03:18.569 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ - null null
+2026-06-11 17:03:18.581 [WRN] Failed to determine the https port for redirect.
+2026-06-11 17:03:18.591 [INF] Executing endpoint '/_Host'
+2026-06-11 17:03:18.603 [INF] Route matched with {page = "/_Host"}. Executing page /_Host
+2026-06-11 17:03:18.613 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-11 17:03:18.616 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-11 17:03:18.722 [INF] Executed page /_Host in 115.627ms
+2026-06-11 17:03:18.732 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - null null
+2026-06-11 17:03:18.734 [INF] Executed endpoint '/_Host'
+2026-06-11 17:03:18.738 [INF] Executing endpoint 'Blazor static files'
+2026-06-11 17:03:18.739 [INF] Request finished HTTP/1.1 GET http://localhost:5120/ - 200 null text/html; charset=utf-8 171.2902ms
+2026-06-11 17:03:18.742 [INF] The file /_framework/blazor.server.js was not modified
+2026-06-11 17:03:18.744 [INF] Executed endpoint 'Blazor static files'
+2026-06-11 17:03:18.745 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_framework/blazor.server.js - 304 null text/javascript 13.2998ms
+2026-06-11 17:03:18.807 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor/initializers - null null
+2026-06-11 17:03:18.811 [INF] Executing endpoint 'Blazor initializers'
+2026-06-11 17:03:18.818 [INF] Executed endpoint 'Blazor initializers'
+2026-06-11 17:03:18.819 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor/initializers - 200 null application/json; charset=utf-8 12.3132ms
+2026-06-11 17:03:18.826 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-11 17:03:18.829 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-11 17:03:18.834 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-11 17:03:18.836 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 9.813ms
+2026-06-11 17:03:18.838 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=ROqxAPOBM8kzG0HG7bwBZA - null null
+2026-06-11 17:03:18.841 [INF] Executing endpoint '/_blazor'
+2026-06-11 17:03:30.772 [INF] Dividido 'aspenONE License File Install.pdf' en 2 fragmentos.
+2026-06-11 17:03:30.781 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:03:30.785 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:03:35.527 [INF] Received HTTP response headers after 4738.6871ms - 200
+2026-06-11 17:03:35.529 [INF] End processing HTTP request after 4749.0891ms - 200
+2026-06-11 17:03:35.638 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:03:35.639 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:03:35.726 [INF] Received HTTP response headers after 85.7068ms - 200
+2026-06-11 17:03:35.728 [INF] End processing HTTP request after 90.8213ms - 200
+2026-06-11 17:03:35.758 [INF] Indexados 2 fragmentos de 'aspenONE License File Install.pdf' en Elasticsearch.
+2026-06-11 17:03:42.236 [INF] Executed endpoint '/_blazor'
+2026-06-11 17:03:42.240 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=ROqxAPOBM8kzG0HG7bwBZA - 101 null null 23401.0499ms
+2026-06-11 17:03:48.378 [INF] Request starting HTTP/1.1 GET http://localhost:5120/upload - null null
+2026-06-11 17:03:48.380 [INF] Executing endpoint '/_Host'
+2026-06-11 17:03:48.382 [INF] Route matched with {page = "/_Host"}. Executing page /_Host
+2026-06-11 17:03:48.385 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-11 17:03:48.386 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-11 17:03:48.399 [INF] Executed page /_Host in 16.0516ms
+2026-06-11 17:03:48.401 [INF] Executed endpoint '/_Host'
+2026-06-11 17:03:48.403 [INF] Request finished HTTP/1.1 GET http://localhost:5120/upload - 200 null text/html; charset=utf-8 25.6961ms
+2026-06-11 17:03:48.753 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - null 0
+2026-06-11 17:03:48.758 [INF] Executing endpoint '/_blazor/negotiate'
+2026-06-11 17:03:48.760 [INF] Executed endpoint '/_blazor/negotiate'
+2026-06-11 17:03:48.761 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 7.5773ms
+2026-06-11 17:03:48.781 [INF] Request starting HTTP/1.1 GET http://localhost:5120/_blazor?id=Gi3Qyqq0OzjAEVkK3wEoFw - null null
+2026-06-11 17:03:48.785 [INF] Executing endpoint '/_blazor'
+2026-06-11 17:03:55.104 [INF] Dividido 'Pendientes.txt' en 1 fragmentos.
+2026-06-11 17:03:55.105 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:03:55.107 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:03:55.272 [INF] Received HTTP response headers after 163.9936ms - 200
+2026-06-11 17:03:55.274 [INF] End processing HTTP request after 168.2468ms - 200
+2026-06-11 17:03:55.305 [INF] Indexados 1 fragmentos de 'Pendientes.txt' en Elasticsearch.
+2026-06-11 17:04:05.157 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:04:05.158 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:04:05.245 [INF] Received HTTP response headers after 86.323ms - 200
+2026-06-11 17:04:05.247 [INF] End processing HTTP request after 90.2826ms - 200
+2026-06-11 17:07:32.853 [INF] Dividido 'Class 1 - April 11.pdf' en 2 fragmentos.
+2026-06-11 17:07:32.855 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:07:32.857 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:07:35.888 [INF] Received HTTP response headers after 3029.5958ms - 200
+2026-06-11 17:07:35.893 [INF] End processing HTTP request after 3037.7794ms - 200
+2026-06-11 17:07:36.023 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:07:36.026 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:07:36.176 [INF] Received HTTP response headers after 146.777ms - 200
+2026-06-11 17:07:36.183 [INF] End processing HTTP request after 159.8726ms - 200
+2026-06-11 17:07:36.273 [INF] Indexados 2 fragmentos de 'Class 1 - April 11.pdf' en Elasticsearch.
+2026-06-11 17:07:41.798 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:07:41.799 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:07:41.896 [INF] Received HTTP response headers after 95.1742ms - 200
+2026-06-11 17:07:41.898 [INF] End processing HTTP request after 100.0751ms - 200
+2026-06-11 17:08:30.041 [INF] Pregunta: hola, que puedes decirme de este documento? → Respuesta generada con 6647 chars de contexto.
+2026-06-11 17:08:41.756 [INF] Dividido 'Ecommerce.docx' en 2 fragmentos.
+2026-06-11 17:08:41.758 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:08:41.759 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:08:42.070 [INF] Received HTTP response headers after 308.4818ms - 200
+2026-06-11 17:08:42.072 [INF] End processing HTTP request after 313.5464ms - 200
+2026-06-11 17:08:42.156 [INF] Start processing HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:08:42.158 [INF] Sending HTTP request POST http://localhost:11434/api/embed
+2026-06-11 17:08:42.239 [INF] Received HTTP response headers after 80.2383ms - 200
+2026-06-11 17:08:42.241 [INF] End processing HTTP request after 85.5209ms - 200
+2026-06-11 17:08:42.299 [INF] Indexados 2 fragmentos de 'Ecommerce.docx' en Elasticsearch.
+2026-06-11 17:08:53.884 [INF] Executed endpoint '/_blazor'
+2026-06-11 17:08:53.885 [INF] Request finished HTTP/1.1 GET http://localhost:5120/_blazor?id=Gi3Qyqq0OzjAEVkK3wEoFw - 101 null null 305104.7129ms
+2026-06-11 17:08:53.913 [INF] Request starting HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundary22kn2stsCAuKHB6N 359
+2026-06-11 17:08:53.919 [INF] Executing endpoint 'Blazor disconnect'
+2026-06-11 17:08:53.940 [INF] Executed endpoint 'Blazor disconnect'
+2026-06-11 17:08:53.941 [INF] Request finished HTTP/1.1 POST http://localhost:5120/_blazor/disconnect - 200 0 null 27.6438ms
+2026-06-11 17:09:01.755 [INF] Application is shutting down...

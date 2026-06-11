@@ -130,6 +130,20 @@ public class RagService : IRagService
         }
     }
 
+    public async Task<bool> HasDocumentsAsync()
+    {
+        try
+        {
+            var count = await _elasticsearch.GetDocumentCountAsync();
+            return count > 0;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error al verificar si existen documentos.");
+            return false;
+        }
+    }
+
     public async Task<string> RetrieveContextAsync(string query)
     {
         try

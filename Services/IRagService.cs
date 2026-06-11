@@ -34,4 +34,5 @@ public interface IRagService
 {
     Task IndexTextAsync(string fileName, string content);
     Task<string> RetrieveContextAsync(string query);
+    Task<bool> HasDocumentsAsync();
 }
